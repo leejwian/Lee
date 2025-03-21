@@ -45,17 +45,17 @@ void DFS(int node, int delNode, int& count) {
     if (node != delNode) {
         visited[node] = true;
 
-        bool flag = true;
+        bool Flag = true;
 
         for (auto neighbor : adjList[node]) {
             if (!visited[neighbor] && neighbor != delNode) {
-                flag = false;
+                Flag = false;
 
                 DFS(neighbor, delNode, count);
             }
         }
 
-        if (flag)
+        if (Flag)
             count++;
     }
 }
